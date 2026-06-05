@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
+  # Ch 9 Auth
+  get 'signup', to: 'users#new', as: 'signup'
+
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "posts#index"
 end

@@ -12,6 +12,9 @@ class User < ApplicationRecord
     has_many :text_posts, dependent: :destroy
     has_many :image_posts, dependent: :destroy
 
+    has_secure_password
+    validates :email, presence: true, uniqueness: true
+
     def following?(leader)
         leaders.include? leader
     end
