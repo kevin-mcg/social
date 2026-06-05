@@ -1,0 +1,2 @@
+class ImagePostsController < Post
+end

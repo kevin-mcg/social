@@ -1,0 +1,2 @@
+class TextPostsController < Post
+end
