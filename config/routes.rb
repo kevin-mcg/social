@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :text_posts
   resources :posts
   resources :users
+  resources :sessions
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -16,6 +18,9 @@ Rails.application.routes.draw do
 
   # Ch 9 Auth
   get 'signup', to: 'users#new', as: 'signup'
+
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
 
   # Defines the root path route ("/")
   root "posts#index"
